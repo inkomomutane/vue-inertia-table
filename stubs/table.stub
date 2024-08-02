@@ -1,0 +1,16 @@
+<?php
+declare(strict_types=1);
+
+namespace DummyNamespace;
+
+use Mutane\VueTable\Facades\VueTable;
+
+class DummyClass extends VueTable
+{
+    protected string $model = '';
+
+    public function columns(): array
+    {
+        return [];
+    }
+}

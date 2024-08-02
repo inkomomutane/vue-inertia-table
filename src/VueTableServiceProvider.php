@@ -2,9 +2,9 @@
 
 namespace Mutane\VueTable;
 
+use Mutane\VueTable\Commands\GenerateTableCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Mutane\VueTable\Commands\VueTableCommand;
 
 class VueTableServiceProvider extends PackageServiceProvider
 {
@@ -20,6 +20,8 @@ class VueTableServiceProvider extends PackageServiceProvider
             ->hasConfigFile()
             ->hasViews()
             ->hasMigration('create_vue_inertia_tables_table')
-            ->hasCommand(VueTableCommand::class);
+            ->hasCommands([
+               GenerateTableCommand::class
+            ]);
     }
 }
