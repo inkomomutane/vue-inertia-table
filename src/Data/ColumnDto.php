@@ -10,6 +10,5 @@ readonly class ColumnDto
         public bool $searchable = true,
         public bool $sortable = true,
         public bool $hidden = false
-    ) {
-    }
+    ) {}
 }

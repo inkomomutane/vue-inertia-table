@@ -12,7 +12,6 @@ class GenerateTableCommand extends GeneratorCommand
 
     protected $type = 'Vue Inertia Table';
 
-
     protected function getStub(): string
     {
         return __DIR__.'/../../stubs/table.stub';
@@ -26,7 +25,7 @@ class GenerateTableCommand extends GeneratorCommand
     protected function buildClass($name): string
     {
         $stub = parent::buildClass($name);
-        return str_replace(array('DummyNamespace', 'DummyClass'), array($this->getNamespace($name), $this->getNameInput()), $stub);
-    }
 
+        return str_replace(['DummyNamespace', 'DummyClass'], [$this->getNamespace($name), $this->getNameInput()], $stub);
+    }
 }

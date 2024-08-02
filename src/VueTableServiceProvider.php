@@ -21,7 +21,7 @@ class VueTableServiceProvider extends PackageServiceProvider
             ->hasViews()
             ->hasMigration('create_vue_inertia_tables_table')
             ->hasCommands([
-               GenerateTableCommand::class
+                GenerateTableCommand::class,
             ]);
     }
 }

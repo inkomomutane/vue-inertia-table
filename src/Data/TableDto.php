@@ -13,6 +13,5 @@ class TableDto
         public array $columns,
         public array $filters,
         public null|Builder|Model|LengthAwarePaginator|Collection|\Illuminate\Database\Eloquent\Collection $query,
-    ){
-    }
+    ) {}
 }

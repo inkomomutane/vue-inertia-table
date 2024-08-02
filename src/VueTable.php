@@ -2,25 +2,25 @@
 
 namespace Mutane\VueTable;
 
-
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\JsonResponse;
 use Mutane\VueTable\Data\TableDto;
 
-class VueTable {
-
+class VueTable
+{
     protected string $model = '';
-    public function columns(): array {
+
+    public function columns(): array
+    {
         return [];
     }
 
     public function make(): JsonResponse
     {
 
-        $columns = array_map(static function($column) {
+        $columns = array_map(static function ($column) {
             return $column->toArray();
         }, $this->columns());
-
 
         return response()->json(new TableDto(
             columns: $columns,
@@ -29,13 +29,14 @@ class VueTable {
         ));
     }
 
-
-    private function getModelInstance(): Builder {
+    private function getModelInstance(): Builder
+    {
 
         // check if the model is set and can be used as an Eloquent model
-        if (!class_exists($this->model)) {
+        if (! class_exists($this->model)) {
             throw new \InvalidArgumentException("The model $this->model does not exist");
         }
+
         return $this->model::query();
     }
 }

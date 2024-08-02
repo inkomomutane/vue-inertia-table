@@ -6,13 +6,17 @@ use Mutane\VueTable\Contracts\Column;
 
 class BooleanColumn extends Column
 {
-    public function setTrueLabel(string $label): static {
+    public function setTrueLabel(string $label): static
+    {
         $this->label = $label;
+
         return $this;
     }
 
-    public function setFalseLabel(string $label): static {
+    public function setFalseLabel(string $label): static
+    {
         $this->label = $label;
+
         return $this;
     }
 }
