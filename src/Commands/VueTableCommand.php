@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Mutane\VueTable\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class VueTableCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'vue-inertia-tables';
 
     public $description = 'My command';
 
